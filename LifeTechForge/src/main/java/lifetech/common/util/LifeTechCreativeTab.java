@@ -1,6 +1,6 @@
 package lifetech.common.util;
 
-import lifetech.common.item.CommonItem;
+import lifetech.common.item.ModItemInitializer;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 
@@ -19,7 +19,7 @@ public class LifeTechCreativeTab extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem() {
-        return new ItemStack(CommonItem.LIFE_ESSENCE);
+        return new ItemStack(ModItemInitializer.LIFE_ESSENCE);
     }
 
 }

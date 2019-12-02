@@ -1,15 +1,17 @@
 package lifetech.common.item;
 
-import net.minecraft.client.Minecraft;
+import lifetech.LifeTech;
+import lifetech.common.container.ContainerItemTickChest;
+import lifetech.common.network.GuiHandler;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
+import net.minecraft.item.ItemAir;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.world.IInteractionObject;
 import net.minecraft.world.World;
 
 /**
@@ -21,11 +23,27 @@ import net.minecraft.world.World;
 public class ItemTickChest extends ItemMod {
     public ItemTickChest(String name, String... variants) {
         super(name, variants);
+        this.setMaxStackSize(1);
+    }
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
+        if (worldIn.isRemote && handIn==EnumHand.OFF_HAND){return new ActionResult<>(EnumActionResult.SUCCESS,playerIn.getHeldItem(handIn));}
+        BlockPos pos=playerIn.getPosition();
+        playerIn.openGui(LifeTech.instance,GuiHandler.GUI_ITEM_TICK_CHEST_ID,worldIn,pos.getX(),pos.getY(),pos.getZ());
+        return new ActionResult<>(EnumActionResult.SUCCESS,playerIn.getHeldItem(EnumHand.MAIN_HAND));
     }
 
     @Override
-    public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        player.openGui();
-        return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+        if (!worldIn.isRemote && entityIn instanceof EntityPlayer && (stack.getTagCompound()==null || !stack.getTagCompound().getBoolean("is_open_container"))) {
+            NonNullList<ItemStack> list = ContainerItemTickChest.getListByNBT(stack);
+            for (ItemStack itemStack : list) {
+                if (itemStack.getItem() instanceof ItemAir) {
+                    continue;
+                }
+                itemStack.getItem().onUpdate(itemStack, worldIn, entityIn, itemSlot, false);
+            }
+            ContainerItemTickChest.saveByNBT(list,stack);
+        }
     }
 }

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NDN",
+    "NCN",
+    "NDN"
+  ],
+  "key": {
+    "N": {
+      "item": "lifetech:normal_soul_accelerator"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "C": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "item": "lifetech:tick_chest"
+  }
+}

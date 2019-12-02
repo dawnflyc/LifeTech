@@ -1,5 +1,13 @@
 {
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "all": "lifetech:blocks/cooked_essence_converter"
+    },
+    "model": "cube_all",
+    "uvlock": true
+  },
   "variants": {
-    "": { "model": "lifetech:block/cooked_essence_converter" }
+    "normal": [{}]
   }
 }
