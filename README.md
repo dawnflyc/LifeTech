@@ -19,5 +19,5 @@ Forge：14.23.5.2768
    
 ### 欢迎提交Lang多国语言本地化文件
 ### Welcome to input your country's Lang files
-    [Pull](https://github.com/dawnflyc/LifeTech/pulls)
+   [Pull](https://github.com/dawnflyc/LifeTech/pulls)
  
