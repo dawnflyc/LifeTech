@@ -2,14 +2,14 @@
 {
   "modid": "lifetech",
   "name": "Life Tech",
-  "description": "Example placeholder mod.",
+//  "description": "life tech",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["dawnflyc"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
+  "authorList": ["dawnflyc，Yecgxtx"],
+  "credits": "",
+  "logoFile": "logo.png",
   "screenshots": [],
   "dependencies": []
 }

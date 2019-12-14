@@ -30,12 +30,14 @@ public class ItemAccelerator extends ItemMod {
         this.setMaxStackSize(1);
         this.speed = speed;
         this.soulAccelerator = soulAccelerator;
+
     }
 
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         if (!worldIn.isRemote && player.isSneaking()) {
-            NBTTagCompound nbt = new NBTTagCompound();
+            NBTTagCompound nbt = player.getHeldItem(hand).getTagCompound();
+            nbt=nbt==null ? new NBTTagCompound() : nbt;
             nbt.setLong("pos", pos.toLong());
             player.getHeldItem(hand).setTagCompound(nbt);
         }

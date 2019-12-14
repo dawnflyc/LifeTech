@@ -4,7 +4,8 @@ import lifetech.common.block.ModBlockInitializer;
 import lifetech.common.event.ModEventInitializer;
 import lifetech.common.item.ModItemInitializer;
 import lifetech.common.network.GuiHandler;
-import lifetech.common.recipes.Smelting;
+import lifetech.common.recipes.ModRecipeInitializer;
+import lifetech.common.recipes.ModSmeltingInitializer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -21,8 +22,10 @@ public class CommonProxy {
         ModItemInitializer.initializer();
         ModBlockInitializer.initializer();
         ModEventInitializer.initializer();
+        ModSmeltingInitializer.initializer();
+        ModRecipeInitializer.initializer();
         GuiHandler.initializer();
-        Smelting.initializer();
+
 
     }
 

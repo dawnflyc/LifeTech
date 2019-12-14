@@ -10,7 +10,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  * @author: xiaofei
  * @create: 2019-12-01 20:43
  **/
-public class Smelting {
+public class ModSmeltingInitializer {
 
     public static void initializer(){
         GameRegistry.addSmelting(ModItemInitializer.LIFE_ESSENCE,new ItemStack(ModItemInitializer.COOKED_ESSENCE),0.1F);

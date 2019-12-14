@@ -1,4 +1,5 @@
 itemGroup.lifetech_creative_tab=生命工艺
+
 item.lifetech:life_essence.name=生命精华
 item.lifetech:iron_life_extractor.name=生命精华提取器
 item.lifetech:diamond_life_extractor.name=高级生命精华提取器
