@@ -11,3 +11,5 @@ item.lifetech:cooked_essence.name=食物精华
 item.lifetech:tick_chest.name=灵空宝石
 
 tile.lifetech:cooked_essence_converter.name=食物精华加工器
+
+bindtip.accelerator.name=绑定成功，绑定坐标

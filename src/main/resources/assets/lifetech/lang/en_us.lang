@@ -1,0 +1,15 @@
+itemGroup.lifetech_creative_tab=Life Tech
+
+item.lifetech:life_essence.name=Life Essence
+item.lifetech:iron_life_extractor.name=Iron Life Extractor
+item.lifetech:diamond_life_extractor.name=Diamond Life Extractor
+item.lifetech:normal_life_accelerator.name=Normal Life Accelerator
+item.lifetech:advanced_life_accelerator.name=Advanced Life Accelerator
+item.lifetech:normal_soul_accelerator.name=Normal Soul Accelerator
+item.lifetech:advanced_soul_accelerator.name=Advanced Soul Accelerator
+item.lifetech:cooked_essence.name=Cooked Essence
+item.lifetech:tick_chest.name=Tick Chest
+
+tile.lifetech:cooked_essence_converter.name=Cooked Essence Converter
+
+bindtip.accelerator.name=Bind succeeded, bind coordinates

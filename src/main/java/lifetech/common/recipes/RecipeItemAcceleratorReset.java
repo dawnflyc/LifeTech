@@ -13,7 +13,6 @@ import net.minecraft.util.ResourceLocation;
  **/
 public class RecipeItemAcceleratorReset extends ModResetRecipe {
 
-    private ItemStack input=ItemStack.EMPTY;
 
     public RecipeItemAcceleratorReset(ResourceLocation res) {
         super(res, ItemAccelerator.class);

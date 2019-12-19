@@ -1,14 +1,17 @@
 package lifetech.common.proxy;
 
+import lifetech.LifeTech;
 import lifetech.common.block.ModBlockInitializer;
 import lifetech.common.event.ModEventInitializer;
 import lifetech.common.item.ModItemInitializer;
 import lifetech.common.network.GuiHandler;
+import lifetech.common.network.MessageAccelerator;
 import lifetech.common.recipes.ModRecipeInitializer;
 import lifetech.common.recipes.ModSmeltingInitializer;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.relauncher.Side;
 
 /**
  * @program: LifeTechForge
@@ -25,6 +28,7 @@ public class CommonProxy {
         ModSmeltingInitializer.initializer();
         ModRecipeInitializer.initializer();
         GuiHandler.initializer();
+        LifeTech.NETWORK.registerMessage(MessageAccelerator.HandlerAccelerator.class,MessageAccelerator.class,0,Side.CLIENT);
 
 
     }
